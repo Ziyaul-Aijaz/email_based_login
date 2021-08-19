@@ -1,0 +1,30 @@
+{% extends "assignment/home.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<h2 style="text-align: center;">Screen 2</h2>
+
+<article class="media content-section" style="width: 610px; border: 2px solid gray;  
+              padding: 10px; border-radius: 10px;  
+                              margin:5px;">
+    <div class="media-body">
+        <div class="article-metadata">
+
+<div class="col-md-12">
+<h1 style="color: #7c795d; font-family: 'Brush Script MT', serif; font-size: 50px; font-weight: normal; line-height: 48px; margin:0;">Sign Up</h1><br>
+<div class="form-group">
+<form method="POST">
+	{% csrf_token %}
+	<!--{{form | crispy}}-->
+	{{form.as_p}}
+	<button type="submit" class="btn btn-outline-secondary">SignUp</button>
+</form>
+
+</div>
+</div>
+    </div>
+  </div>
+</article>
+
+{% endblock %}
